@@ -16,6 +16,6 @@ namespace ApiCatalogoJogos.InputModel
         public string Produtora { get; set; }
         [Required]
         [Range(5, 100, ErrorMessage = "O preço deve ser de no mínimo 5 reais e no máximo 100 reais")]
-        public string Preco { get; set; }
+        public double Preco { get; set; }
     }
 }
