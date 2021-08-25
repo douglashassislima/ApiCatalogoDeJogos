@@ -35,6 +35,7 @@ namespace ApiCatalogoJogos.Controllers.VR1
         [HttpGet]
         public async Task<ActionResult<IEnumerable<JogosViewModel>>> Obter([FromQuery, Range(1, int.MaxValue)] int pagina = 1, [FromQuery, Range(1, 50)] int quantidade = 5)
         {
+            throw new Exception();
             var jogos = await _jogoService.Obter(pagina, quantidade);
 
             if (jogos.Count() == 0)
