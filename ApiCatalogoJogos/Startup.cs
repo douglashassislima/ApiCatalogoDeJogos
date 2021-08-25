@@ -16,6 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using static ApiCatalogoJogos.Middleware.ExeceptionMiddleware;
 
 namespace ApiCatalogoJogos
 {
@@ -64,6 +65,8 @@ namespace ApiCatalogoJogos
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/VR1/swagger.json", "ApiCatalogoJogos VR1"));
             }
+
+            app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseHttpsRedirection();
 
