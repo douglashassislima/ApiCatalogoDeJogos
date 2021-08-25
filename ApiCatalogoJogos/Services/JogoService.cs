@@ -1,4 +1,5 @@
-﻿using ApiCatalogoJogos.Repositories;
+﻿using ApiCatalogoJogos.InputModel;
+using ApiCatalogoJogos.Repositories;
 using ApiCatalogoJogos.ViewModel;
 using System;
 using System.Collections.Generic;
