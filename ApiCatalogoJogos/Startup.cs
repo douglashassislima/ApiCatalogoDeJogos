@@ -32,7 +32,7 @@ namespace ApiCatalogoJogos
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IJogoService, JogoService>();
-            //services.AddScoped<IJogoRepository, JogoSqlServerRepository>();
+            services.AddScoped<IJogoRepository, JogoSqlServerRepository>();
 
             services.AddScoped<IJogoService, JogoService>();
             services.AddScoped<IJogoRepository, JogoRepository>();
@@ -49,11 +49,10 @@ namespace ApiCatalogoJogos
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("VR1", new OpenApiInfo { Title = "ApiCatalogoJogos", Version = "VR1" });
-                c.SwaggerDoc("VR1", new OpenApiInfo { Title = "CatalogoJogosAPI", Version = "VR1" });
                 var basePath = AppDomain.CurrentDomain.BaseDirectory;
                 var fileName = typeof(Startup).GetTypeInfo().Assembly.GetName().Name + ".xml";
                 c.IncludeXmlComments(Path.Combine(basePath, fileName));
-        });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
